@@ -23,7 +23,7 @@ while i < 1000:
     temp1 = np.dot(np.transpose(x), loss) / len(x)  #Cost方程对weight偏导
     temp2 = np.mean(loss)                           #Cost方程对bias偏导
     w -= alpha * temp1          #更新weight值
-    b -= alpha * temp2 * 10000  #更新bias值
+    b -= temp2                  #更新bias值
     if abs(J0 - J) < ep:        #判断是否达到循环结束条件
         break
     print('No.%d: J=%.5f, w=%.2f, b=%.2f' % (i, J, w, b))
